@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Autocomplete Assistant</title>
+  <style>
+    body { font-family: Arial, sans-serif; width: 360px; padding: 12px; }
+    textarea { width: 100%; height: 120px; }
+    button { padding: 8px 12px; margin-top: 8px; }
+    .hint { color: #555; font-size: 13px; margin-top: 8px; }
+    .s-list{ margin-top:8px; max-height:120px; overflow:auto; border:1px solid #ddd; padding:6px; border-radius:6px;}
+    .s-item{ padding:6px; border-bottom:1px solid #f0f0f0;}
+  </style>
+</head>
+<body>
+  <h3>Autocomplete Assistant</h3>
+  <div>
+    <label for="newSuggestions">Add / Edit suggestions (one per line)</label>
+    <textarea id="newSuggestions" placeholder="Type one suggestion per line"></textarea>
+    <div>
+      <button id="saveBtn">Save</button>
+      <button id="resetBtn">Reset Defaults</button>
+    </div>
+    <div class="hint">Press Tab to accept a suggestion while typing or click a suggestion.</div>
+    <div class="s-list" id="currentList"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

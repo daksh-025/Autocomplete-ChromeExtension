@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autocomplete Extension Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        .contenteditable {
+            width: 100%;
+            min-height: 100px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: white;
+        }
+        h2 {
+            color: #333;
+            margin-top: 0;
+        }
+        .instructions {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Autocomplete Extension Test Page</h1>
+    
+    <div class="instructions">
+        <strong>Instructions:</strong> Type at least 2 characters in any text field below to see autocomplete suggestions. 
+        Use arrow keys to navigate, Tab or Enter to select, or click on a suggestion.
+    </div>
+
+    <div class="test-section">
+        <h2>Text Input Field</h2>
+        <input type="text" placeholder="Type here to test autocomplete...">
+    </div>
+
+    <div class="test-section">
+        <h2>Textarea</h2>
+        <textarea placeholder="Type here to test autocomplete in textarea..."></textarea>
+    </div>
+
+    <div class="test-section">
+        <h2>Email Input</h2>
+        <input type="email" placeholder="Type here to test autocomplete in email field...">
+    </div>
+
+    <div class="test-section">
+        <h2>Search Input</h2>
+        <input type="search" placeholder="Type here to test autocomplete in search field...">
+    </div>
+
+    <div class="test-section">
+        <h2>Content Editable Div</h2>
+        <div class="contenteditable" contenteditable="true" placeholder="Type here to test autocomplete in contenteditable div..."></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Multiple Inputs</h2>
+        <input type="text" placeholder="First input...">
+        <input type="text" placeholder="Second input...">
+        <input type="text" placeholder="Third input...">
+    </div>
+
+    <script>
+        // Add some debugging info
+        console.log('Test page loaded. Make sure the autocomplete extension is installed and enabled.');
+        
+        // Add focus indicators
+        document.querySelectorAll('input, textarea, [contenteditable]').forEach(el => {
+            el.addEventListener('focus', () => {
+                console.log('Focused on:', el.tagName, el.type || 'contenteditable');
+            });
+        });
+    </script>
+</body>
+</html>
